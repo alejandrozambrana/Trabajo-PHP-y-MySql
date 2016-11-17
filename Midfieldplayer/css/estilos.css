@@ -1,0 +1,147 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-nov-2016, 16:05:58
+    Author     : Zambrana
+*/
+body{
+  background-color: #e6e6e6;
+  /*background-color: #C8D5B9;*/
+}
+/*--------------------login---------------------------------*/
+.tituloLogin{
+  text-align: center;
+  margin-top: 10px;
+}
+.titulo{
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+@media (min-width:600px){
+#login{
+  width: 600px;
+  height: 400px;
+  background-color: #68B0A9;
+  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.3);
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 5px;
+  border-radius: 25px;
+  margin-left: 30%;
+}
+}
+
+@media (max-width:600px){
+#login{
+  width: 80%;
+  height: 400px;
+  background-color: #68B0A9;
+  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.3);
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 5px;
+  border-radius: 25px;
+  margin-left: 10%;
+}
+}
+
+#usuarioId, #contrasenaId, #email{
+  width: 50%;
+}
+
+.registrar{
+  text-align: right;
+  margin: 25px;
+  color: white;
+}
+.registrar a{
+  color: white;
+}
+/*------------Administrador------------------------------*/
+#usuarioAdmin{
+  text-align: right;
+  padding-right: 20px;
+}
+
+#tituloAdmin{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#logo{
+  text-align: center;
+  z-index: 1;
+}
+
+#tabla{
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.botonAnadir{
+  position: fixed;
+  right: 30px;
+  bottom: 23px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+  z-index: 998;
+  border-radius: 50px;
+  box-shadow:  3px 3px 2px 0px rgba(0,0,0,0.14);
+}
+
+#botonesPaginas{
+  text-align: center;
+  margin: 0 auto;
+}
+#cuadroAñadir{
+  margin: 0 auto;
+  padding-left: 20%;
+}
+#cuadroAñadir input{
+  width: 300px;
+}
+.botonCuadroAnadir{
+  margin-left: 35%;
+  margin-top: 10px;
+}
+.modificarInput{
+  margin: 0 auto;
+}
+
+#botonEliminar{
+  color: white;
+}
+#botonEliminar:hover{
+  text-decoration: none;
+}
+#botonVolver{
+  color: black;
+}
+#botonVolver:hover{
+  text-decoration: none;
+}
+
+.tamañoSelect{
+  width: 250px;
+}
+.tamañoSelectNacPos{
+  width: 150px;
+}
+#modificarInputJugadores{
+  width: 50px;
+}
+/*estilo carousel*/
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 70%;
+  margin: auto;
+}
+/*--------------------------------------------------------------*/
