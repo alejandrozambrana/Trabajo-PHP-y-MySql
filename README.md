@@ -1,3 +1,3 @@
 ﻿# Trabajo-PHP-y-MySql
 
-!(capturas/login.png "login")
+![Login](Capturas/login.png "login")
