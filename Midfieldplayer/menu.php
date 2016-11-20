@@ -27,7 +27,7 @@ session_start();// Inicia la sesión
     ?>  
         <!--logo-->
         <div id="logo" class="col-xs-12 col-sm-12 col-md-12">
-          <img src="imagen/logoNombre.png" name="MidField Player" alt="MidField Player" width="350" >
+          <a href="menu.php"><img src="imagen/logoNombre.png" name="MidField Player" alt="MidField Player" width="350" ></a>
         </div>
         
         <!--css propio-->
@@ -81,15 +81,15 @@ session_start();// Inicia la sesión
             <div class="carousel-inner" role="listbox">
 
               <div class="item active">
-                <img src="imagen/logoNombre.png" alt="MilfieldPlayer" width="160" height="345">
+                <img src="imagen/carousel/carousel.png" alt="MilfieldPlayer" width="160" height="345">
                 <div class="carousel-caption">
-                  <h3>Milfield Player</h3>
-                  <p>Es una aplicacion en la que podras formar tu propio equipo hasta llegar a ser el mejor.</p>
+                  <h3 style="color: black;">Milfield Player</h3>
+                  <p style="color: black;">Es una aplicacion en la que podras formar tu propio equipo hasta llegar a ser el mejor.</p>
                 </div>
               </div>
 
               <div class="item">
-                <img src="imagen/carousel1.jpg" alt="Chania" width="460" height="345">
+                <img src="imagen/carousel/carousel1.jpg" alt="Chania" width="460" height="345">
                 <div class="carousel-caption">
                   <h3>Milfield Player</h3>
                   <p>Ficha a los mejores jugadores de la liga.</p>
@@ -97,7 +97,7 @@ session_start();// Inicia la sesión
               </div>
 
               <div class="item">
-                <img src="imagen/carousel2.jpg" alt="Flower" width="460" height="345">
+                <img src="imagen/carousel/carousel2.jpg" alt="Flower" width="460" height="345">
                 <div class="carousel-caption">
                   <h3>Milfield Player</h3>
                   <p>Gana Puntos al ganas partidos.</p>
@@ -105,7 +105,7 @@ session_start();// Inicia la sesión
               </div>
 
               <div class="item">
-                <img src="imagen/carousel3.jpg" alt="Flower" width="460" height="345">
+                <img src="imagen/carousel/carousel3.jpg" alt="Flower" width="460" height="345">
                 <div class="carousel-caption">
                   <h3>Milfield Player</h3>
                   <p>Juega con tus amigos.</p>
@@ -132,31 +132,48 @@ session_start();// Inicia la sesión
         <link href="css/estilosCliente.css" rel="stylesheet"> 
         <!--logo-->
         <div id="logo">
-          <img src="imagen/logoNombre.png" name="MidField Player" alt="MidField Player" width="350" >
+          <a href="menu.php"><img src="imagen/logoNombre.png" name="MidField Player" alt="MidField Player" width="350px" ></a>
         </div>
+        <!--barra de navegacion-->
         <div class="barraNavegacion">	
           <nav>
-            <ul>
-              <li><a href="menu.php"><b><span class="sprite sprite-home"></span> MilField Player</b></a></li>
-              <li><a href="Cliente/jugadores.php"><span class="sprite sprite-persona"></span> Jugadores</a></li>
-              <li><a href="Cliente/equipos.php"><span class="sprite sprite-equipos"></span> Equipo</a></li>
-              <li><a href="Cliente/posiciones.php"><span class="sprite sprite-posicion"></span> Posiciones</a></li>
-              <li><a href="Cliente/nacionalidad.php"><span class="sprite sprite-nacionalidad"></span> Nacionalidad</a></li>  
-            </ul>
-            <ul class="menuBotonDerecha">
-              <li><a href="#"><span class="sprite sprite-persona"></span> <?=$_SESSION['usuario']?> <span class="sprite sprite-abajo"></span></a>
-                <ul>
-                  <li><a href="index.php">Salir<span class="sprite sprite-salir"></span></a></li>
-                </ul>
-              </li>
-            </ul>
-            <a id="botonMenu" href="#"></a>
+            <!--boton menu-->
+            <label for="opcionesOcultas" id="botonMenu"><span class="sprite sprite-menu"></span></label>
+            <input type="checkbox" id="opcionesOcultas" class="oculto" />
+            <div class="opcionesOcultas">
+              <ul>
+                <li><a href="menu.php"><b><span class="sprite sprite-home"></span> MilField Player</b></a></li>
+                <li><a href="Cliente/jugadores.php"><span class="sprite sprite-persona"></span> Jugadores</a></li>
+                <li><a href="Cliente/equipos.php"><span class="sprite sprite-equipos"></span> Equipos</a></li>
+                <li><a href="Cliente/posiciones.php"><span class="sprite sprite-posicion"></span> Posiciones</a></li>
+                <li><a href="Cliente/nacionalidad.php"><span class="sprite sprite-nacionalidad"></span> Nacionalidades</a></li>  
+              </ul>
+              <ul class="menuBotonDerecha">
+                <li><a href="#"><span class="sprite sprite-persona"></span> <?=$_SESSION['usuario']?> <span class="sprite sprite-abajo"></span></a>
+                  <ul>
+                    <li><a href="index.php">Salir<span class="sprite sprite-salir"></span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </nav>
+        </div>
+        
+        <!-------------Carousel------------>
+        <div class="carousel">
+          <img class="imagen" src="imagen/carousel/carousel.png" width="100%" height="100%" />
+          <img class="imagen" src="imagen/carousel/carousel1.jpg" width="100%" height="100%" />
+          <img class="imagen" src="imagen/carousel/carousel2.jpg" width="100%" height="100%"/>
+          <img class="imagen" src="imagen/carousel/carousel3.jpg" width="100%" height="100%"/>
         </div>
         
     <?php
       } else {
-        echo "logueate";
+    ?>
+        <!--css propio-->
+        <link href="css/estilosCliente.css" rel="stylesheet"> 
+        <div id="titulo3D">logueate</div>
+    <?php
       }
     ?>
   </body>

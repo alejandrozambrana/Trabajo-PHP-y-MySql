@@ -11,8 +11,13 @@ if(!isset($_SESSION['paginas'])) {
     <meta charset="UTF-8">
     <title>MilField Player</title>
     <link rel="shortcut icon" type="image/png" href="../imagen/logo.png"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <!--css propio-->
     <link href="../css/estilosCliente.css" rel="stylesheet"> 
+    <!--fuente personalizada para titulo 3D-->
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=PT+Serif');
+    </style>
   </head>
   <body>
     <?php
@@ -25,28 +30,34 @@ if(!isset($_SESSION['paginas'])) {
       }
     ?>
       <div id="logo">
-        <img src="../imagen/logo.png" name="MidField Player" alt="MidField Player" width="120" >
+        <a href="../menu.php"><img src="../imagen/logo.png" name="MidField Player" alt="MidField Player" width="120" ></a>
       </div>
     <?php
       //deja acceder si estas logueado
       if($_SESSION['logueado'] == true && $_SESSION['tipoUsuario'] == "cliente"){
     ?>
+        <!--barra de navegacion-->
         <div class="barraNavegacion">	
           <nav>
-            <ul>
-              <li><a href="../menu.php"><b><span class="sprite sprite-home"></span> MilField Player</b></a></li>
-              <li><a href="jugadores.php"><span class="sprite sprite-persona"></span> Jugadores</a></li>
-              <li><a href="equipos.php"><span class="sprite sprite-equipos"></span> Equipo</a></li>
-              <li><a href="posiciones.php"><span class="sprite sprite-posicion"></span> Posiciones</a></li>
-              <li><a href="nacionalidad.php"><span class="sprite sprite-nacionalidad"></span> Nacionalidad</a></li>  
-            </ul>
-            <ul class="menuBotonDerecha">
-              <li><a href="#"><span class="sprite sprite-persona"></span> <?=$_SESSION['usuario']?> <span class="sprite sprite-abajo"></span></a>
-                <ul>
-                  <li><a href="../index.php">Salir<span class="sprite sprite-salir"></span></a></li>
-                </ul>
-              </li>
-            </ul>
+            <!--boton menu-->
+            <label for="opcionesOcultas" id="botonMenu"><span class="sprite sprite-menu"></span></label>
+            <input type="checkbox" id="opcionesOcultas" class="oculto" />
+            <div class="opcionesOcultas">
+              <ul>
+                <li><a href="../menu.php"><b><span class="sprite sprite-home"></span> MilField Player</b></a></li>
+                <li id="activate"><a href="jugadores.php"><span class="sprite sprite-persona"></span> Jugadores</a></li>
+                <li><a href="equipos.php"><span class="sprite sprite-equipos"></span> Equipos</a></li>
+                <li><a href="posiciones.php"><span class="sprite sprite-posicion"></span> Posiciones</a></li>
+                <li><a href="nacionalidad.php"><span class="sprite sprite-nacionalidad"></span> Nacionalidades</a></li>  
+              </ul>
+              <ul class="menuBotonDerecha">
+                <li><a href="#"><span class="sprite sprite-persona"></span> <?=$_SESSION['usuario']?> <span class="sprite sprite-abajo"></span></a>
+                  <ul>
+                    <li><a href="../index.php">Salir<span class="sprite sprite-salir"></span></a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </nav>
         </div>
     <?php          
@@ -73,54 +84,41 @@ if(!isset($_SESSION['paginas'])) {
         }        
     ?>
       <!--crea una tabla con los datos-->
-      <h1 style="text-align: center;">Jugadores</h1>
-      <table>
-        <tr>
-          <td><b>Codigo</b></td>
-          <td><b>Nombre</b></td>
-          <td><b>Equipo</b></td>
-          <td><b>Dorsal</b></td>
-          <td><b>Edad</b></td>
-          <td><b>Altura</b></td>
-          <td><b>Peso</b></td>
-          <td><b>Nacionalidad</b></td>
-          <td><b>Posicion</b></td>
-          <td></td>
-          <td></td>
-        </tr>
+      <h1 id="titulo3D">Jugadores</h1>
+      <div class="flex-container flex-row">
     <?php
     
-      //saca los equipos por pagina
-      $listadojugadores = "SELECT * FROM jugadores ORDER BY codjug LIMIT ".(($_SESSION['paginas'] - 1) * 5).", 5";
-      $consulta = $conexion->query($listadojugadores);
+        //saca los equipos por pagina
+        $listadojugadores = "SELECT * FROM jugadores ORDER BY codjug LIMIT ".(($_SESSION['paginas'] - 1) * 5).", 5";
+        $consulta = $conexion->query($listadojugadores);
 
-      //con este while saca todos los datos de la consulta
-      while ($jugadores = $consulta -> fetchObject() ) {
+        //con este while saca todos los datos de la consulta
+        while ($jugadores = $consulta -> fetchObject() ) {
     ?>
-          <tr>
-            <td><?= $jugadores->codjug ?></td>
-            <td><?= $jugadores->nomjug ?></td>
+            <div class="flex-item">
+              <p><b>Codigo: </b> <?= $jugadores->codjug ?></p>
+              <p><b>Nombre: </b><?= $jugadores->nomjug ?></p>
     <?php
             //saca los equipos
             $listadoequipos = "SELECT * FROM equipo WHERE codequi=$jugadores->equipojug";
             $consultaequipo = $conexion->query($listadoequipos);
             while ($equipo = $consultaequipo -> fetchObject() ) {
     ?>
-              <td><?=$equipo->nomequi?></td>
+              <p><b>Equipo: </b><?=$equipo->nomequi?></p>
     <?php                
             }
     ?>
-            <td><?= $jugadores->dorsaljug ?></td>
-            <td><?= $jugadores->edadjug ?> Años</td>
-            <td><?= $jugadores->alturajug ?> Cm </td>
-            <td><?= $jugadores->pesojug ?> Kg</td>
+              <p><b>Dorsal: </b><?= $jugadores->dorsaljug ?></p>
+              <p><b>Edad: </b><?= $jugadores->edadjug ?> Años</p>
+              <p><b>Altura: </b><?= $jugadores->alturajug ?> Cm </p>
+              <p><b>Peso: </b><?= $jugadores->pesojug ?> Kg</p>
     <?php
             //saca los equipos
             $listadonacionalidad = "SELECT * FROM nacionalidad WHERE codnac=$jugadores->codnac";
             $consultaNacionalidad = $conexion->query($listadonacionalidad);
             while ($nacionalidad = $consultaNacionalidad -> fetchObject() ) {
     ?>
-              <td><?=$nacionalidad->pais?></td>
+              <p><b>Nacionalidad: </b><?=$nacionalidad->pais?></p>
     <?php                
             }
             //saca los equipos
@@ -128,12 +126,16 @@ if(!isset($_SESSION['paginas'])) {
             $consultaPosiciones = $conexion->query($listadoPosiciones);
             while ($posiciones = $consultaPosiciones -> fetchObject() ) {
     ?>
-              <td><?= $posiciones->posicion ?></td>
+              <p><b>Posicion: </b><?= $posiciones->posicion ?></p>
     <?php
             }
-        } //cierra while
     ?>
-      </table>
+            </div>
+    <?php
+          } //cierra while
+    ?>
+        </table>
+      </div>
       
       <div>
         <table>
@@ -145,22 +147,29 @@ if(!isset($_SESSION['paginas'])) {
           <tr>
             <td>
               <form action="jugadores.php" method="POST">
-                <button type="submit" name="paginas" value="Anterior">Anterior</button>
+                <button type="submit" class="botonPasarPagina" name="paginas" value="Anterior"><span class="sprite sprite-left"></span> Anterior</button>
               </form>
             </td>
           <!-- Siguiente -->
             <td>
               <form action="jugadores.php" method="POST">
-                <button type="submit" name="paginas" value="Siguiente">Siguiente</button>
+                <button type="submit" class="botonPasarPagina" name="paginas" value="Siguiente">Siguiente <span class="sprite sprite-right"></span></button>
               </form>
             </td>
           </tr>
         </table>
       </div>
-      <a href="../menu.php">ir al menu</a>
+      <button class="botonVolver">
+        <span class="sprite sprite-volver"></span>
+        <a href="../menu.php"> Volver</a>
+      </button>
     <?php  
       } else {
-        echo "logueate";
+    ?>
+        <!--css propio-->
+        <link href="css/estilosCliente.css" rel="stylesheet"> 
+        <div id="titulo3D">logueate</div>
+    <?php
       }     
     ?>
   </body>

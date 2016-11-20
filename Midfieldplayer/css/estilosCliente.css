@@ -27,36 +27,59 @@ body{
     width: 24px;
     height: 24px;
 }
-.sprite-anadir {
-  background-position: -5px -5px;
+.sprite-abajo {
+  background-position: -11px -6px;
 }
 
-.sprite-borrar {
+.sprite-anadir {
   background-position: -39px -5px;
 }
 
-.sprite-editar {
+.sprite-borrar {
   background-position: -73px -5px;
 }
 
-.sprite-enviar {
+.sprite-descartar {
+  background-position: -107px -5px;
+}
+
+.sprite-editar {
   background-position: -5px -39px;
 }
 
-.sprite-abajo {
-  background-position: -44px -41px;
+.sprite-enviar {
+  background-position: -39px -39px;
 }
 
 .sprite-equipos {
-  background-position: -70px -42px;
+  background-position: -71px -39px;
 }
 
 .sprite-home {
-  background-position: -2px -76px;
+  background-position: -104px -42px;
 }
 
-.sprite-posicion {
-  background-position: -36px -76px;
+.sprite-left {
+  background-position: -5px -73px;
+}
+
+.sprite-menu {
+  width: 30px;
+  height: 26px;
+  background-position: -36px -72px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  box-shadow: 1px 3px 6px #888880;
+  -webkit-box-shadow: 1px 3px 6px #888880;
+  -moz-box-shadow: 1px 3px 6px #888880;
+}
+.sprite-menu:hover {
+  background-color: #e6e6e6;
+}
+.sprite-menu:active {
+  box-shadow: -1px -1px 6px #888880;
+  -webkit-box-shadow: -1px -1px 6px #888880;
+  -moz-box-shadow: -1px -1px 6px #888880;
 }
 
 .sprite-nacionalidad {
@@ -64,20 +87,25 @@ body{
 }
 
 .sprite-persona {
-  background-position: -104px -8px;
+  background-position: -105px -76px;
 }
 
-.sprite-left {
-  background-position: -107px -39px;
+.sprite-posicion {
+  background-position: -2px -109px;
 }
 
 .sprite-right {
-  background-position: -107px -73px;
+  background-position: -39px -107px;
 }
 
 .sprite-salir {
-  background-position: -7px -108px;
+  background-position: -76px -108px;
 }
+
+.sprite-volver {
+  background-position: -107px -107px;
+}
+
 /* Termina sprite*/
 /* ///////////////////////////Barra de navegacion//////////////// */
 .barraNavegacion{
@@ -85,7 +113,7 @@ body{
   width:100%;
   height: 166px;
   margin-top: -120px; 
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   background-color: white;
   z-index: -1;
 }
@@ -128,69 +156,301 @@ nav li a:hover{
   float: right;
   text-align: center;
   margin-top: -26px;
-  margin-right: 2%;
+  margin-right: 10px;
   padding-bottom: 10px;
 }
 
 .menuBotonDerecha:hover {
   background-color: #e7e7e7; 
 }
-
 .menuBotonDerecha ul{
-  position: absolute;
-  left: 85%;
-  top: 55px;
+  position: relative;
+  top:8px;
   opacity: 0;
   width: 150px;
   text-align: center;
+  
 }
 .menuBotonDerecha li:hover ul {
   background: white;
   border: 1px solid #d9d9d9;
-  left: 85%;
+  width: 180px;
   opacity: 1;
   box-shadow: 1px 1px 10px #888888;
+  -webkit-box-shadow: 1px 1px 10px #888888;
+  -moz-box-shadow: 1px 1px 10px #888888;
 }
 .menuBotonDerecha ul li a:hover{
   background: none;
 }
-
+.menuBotonDerecha ul li a{
+  padding: 5px 40px 5px 40px;
+}
 a#botonMenu {
-    display: none;
+  display: none;
 }
-/*///////////////////////Nav responsive/////////////////////////////////*/
+#botonMenu{
+  display: none;
+}
+.oculto{
+  display: none;
+}
+#activate{
+  text-decoration: none;
+  color: #333333;
+  background-color: #e7e7e7;
+  padding: 5px 0px 12px;
+}
+/*//////////////////////////Titulo 3D////////////////////////*/
+#titulo3D{
+  text-align: center;
+  font-family: 'PT Serif', serif;
+  font-size: 4em;
+  color:white;
+  text-align: center;
+  text-shadow: 1px 1px 0px rgb(230,230,230), 
+              2px 2px 0px rgb(200,200,200), 
+              3px 3px 0px rgb(180,180,180), 
+              4px 4px 0px rgb(160,160,160),
+              5px 5px 0px rgb(0,0,0), 
+              8px 8px 20px rgb(0,0,0);
+}
+/*//////////////////////////FlexBox//////////////////////////*/
+.flex-container{
+  padding: 5px 0px 5px 5px;
+  height: 100%;
+  margin: 10px auto;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+.flex-item{
+  width: 250px;
+  height: 50%;
+  background-color: white;
+  margin: 15px;
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 1px 1px 10px #888888;
+  -webkit-box-shadow: 1px 1px 10px #888888;
+  -moz-box-shadow: 1px 1px 10px #888888;
+}
+/*//////////////////////////tablas///////////////////////////*/
+table{
+  margin-top:30px;
+  margin-bottom: 25px;
+  width: 100%;
+  text-align: center;
+  border-collapse:collapse;
+  overflow-x: auto;
+}
+table tr {
+ height: 52px;
+}
+table tr:first-child{
+  height: 35px;
+}
 
-@media screen and (max-width:880px){
-    nav ul {
-       /*display: none;*/
-        height: auto;
-        width: 100%;
-    }
- 
-    nav li {
-        width: 50%;
-        float: left;
-        position: relative;
-    }
- 
-    nav a {
-        text-align: left;
-        width: 100%;
-        text-indent: 25px;
-    }
- 
-    nav a#botonMenu {
-        display: block;
-        background-color: #666;
-        width: 10%;
-        position: relative;
-        background: url(../imagen/sprite.png) no-repeat;
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        position: absolute;
-        right: 15px;
-        top: 10px;
-    }
+table tr:nth-child(odd){
+  background-color: white;
 }
-/*////////////////////////////////////////////////////////////////////*/
+/*//////////////////////////botones/////////////////////////////////*/
+.botonPasarPagina{
+  color: #fff;
+  background-color: #5bc0de;
+  padding: 8px 15px;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px hidden;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+.botonVolver{
+  background-color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid #bfbfbf;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  position: relative;
+  left:20px;
+  margin-bottom: 20px;
+}
+.botonVolver a{
+  color: black;
+  text-decoration: none;
+}
+.botonVolver:hover{
+  text-decoration: none;
+  background-color: #e6e6e6;
+}
+/*///////////////////////carousel///////////////////////////////////*/
+@keyframes movimiento {
+	0%, 20%, 100% { 
+          opacity: 0; 
+        }
+	5%, 15% { 
+          opacity: 1;
+        }
+}
+.carousel{
+  background-color: white;
+  width: 70.3%;
+  height: 50%;
+  box-shadow: 5px 5px 5px #888888;
+  -webkit-box-shadow: 5px 5px 5px #888888;
+  -moz-box-shadow: 5px 5px 5px #888888;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  margin-left: -35%;
+  margin-bottom: 100px;
+  overflow: hidden;
+  z-index: -1;
+}
+.carousel .imagen {
+  max-width: 1000px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  animation-name: movimiento;
+  animation-duration: 35s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.carousel .imagen:nth-child(2) {
+  animation-delay: 10s;
+}
+.carousel .imagen:nth-child(3) {
+  animation-delay: 20s;
+}
+.carousel .imagen:nth-child(4) {
+  animation-delay: 30s;
+}
+/*///////////////////////responsive/////////////////////////////////*/
+
+@media screen and (max-width:760px){
+  /*///////////////////////Nav responsive/////////////////////////////////*/
+    nav {
+      padding-top: 0px;
+      margin-top: 10px;
+      background-color: white;
+    }
+    nav ul {
+      height: auto;
+      width: 100%;
+    }
+ 
+    nav li + li {
+      margin-top: -10px;
+    }
+    
+    nav li {
+      width: 100%;
+      float: left;
+    }
+ 
+    nav li a {
+      text-align: left;
+      width: 100%;
+      display: block;
+      padding: 10px;
+    }
+    nav li a:hover{
+      text-decoration: none;
+      color: #333333;
+      background: none;
+    }
+ 
+    #botonMenu {  
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      position: absolute;
+      right: 15px;
+      top: 5px;
+      display: block;
+    }
+    .menuBotonDerecha{
+      float: left;
+      text-align: center;
+      margin-top: -26px;
+      margin-right: 0px;
+      padding-bottom: 0px;
+    }
+    .menuBotonDerecha a{
+      text-indent: 10px;
+      margin-top: 10px;
+      padding: 10px 10px 10px 0px;
+      height: 0px;
+      width: 100%;
+    }
+    .menuBotonDerecha:hover {
+      background: none; 
+    }
+    
+    .menuBotonDerecha li ul, .menuBotonDerecha li:hover ul {
+      width: 150px;
+    }
+    
+    .menuBotonDerecha li ul{
+      position: relative;
+      top: 15px;
+      margin-left: 10px;
+      height: 30px;
+      width: 150px;
+    }
+    
+    .menuBotonDerecha ul li a{
+      padding: 0px 0px 0px 0px;
+      height: 30px;
+      width: 150px;
+      margin-top: -3px;
+      text-align: center;
+    }
+    #activate{
+      padding: 0px 0px;
+      margin: 0px 0px 10px 0px;
+    }
+    /*oculta y pone a la vista las botones del menu*/
+    .opcionesOcultas {
+      display: none;      
+    }
+    :checked ~ .opcionesOcultas {
+      display: block;
+    }
+    input.oculto[type=checkbox] {
+      display: none;
+    }
+  /*////////////////////////tabla responsive///////////////////////*/
+  table tr td{
+    white-space: nowrap;
+    padding: 0px 10px;
+  }
+  #desplazamientoTabla{
+    overflow-x: auto;
+  }
+  /*//////////////////////////Titulo 3D////////////////////////*/
+  #titulo3D{
+    font-size: 2.5em;
+  }
+  /*//////////////////////////FlexBox//////////////////////////*/
+  .flex-container{
+    justify-content: center;
+  }
+  
+}
+/*///////////////////////////////////////////////////////////*/
+

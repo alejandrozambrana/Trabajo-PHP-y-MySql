@@ -35,7 +35,7 @@ error_reporting(E_ALL ^ E_NOTICE); //no muestra error de variables indefinida
       </div>
     
       <div id="login">
-        <h1 style="color: white; margin-bottom: 30px;">Reguistrate</h1>
+        <h1 style="margin-bottom: 30px;">Reguistrate</h1>
         <form action="registrate.php" method="POST">
           <label for="usuarioId">Nombre de usuario</label><br>
           <input type="text" name="usuario" class="form-control center-block" id="usuarioId" autofocus required="required"></br>
@@ -44,7 +44,7 @@ error_reporting(E_ALL ^ E_NOTICE); //no muestra error de variables indefinida
           <label for="email">Email</label><br>
           <input type="email" name="email" class="form-control center-block" id="email" required="required"></br>
           <input type="hidden" name="accion" value="crearUsuario" >
-          <button type="submit" class="btn btn-default" name="action" style="color: black;">Crear 
+          <button type="submit" class="btn btn-default" name="action" style="background-color: #e6e6e6;">Crear 
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
           </button>
         </form>

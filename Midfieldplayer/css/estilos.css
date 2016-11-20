@@ -21,34 +21,42 @@ body{
   margin-top: 20px;
 }
 
-@media (min-width:600px){
 #login{
-  width: 600px;
-  height: 400px;
-  background-color: #68B0A9;
+  width: 40%;
+  height: 50%;
+  background-color: white;
   box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.3);
   margin: 0 auto;
   text-align: center;
   margin-top: 50px;
   padding-top: 5px;
+  padding-bottom: 20px;
   border-radius: 25px;
   margin-left: 30%;
 }
+
+@media screen and (max-width:1060px){
+  #login{
+    width: 40%;
+    height: 50%;
+    margin-left: 30%;
+  }
 }
 
-@media (max-width:600px){
-#login{
-  width: 80%;
-  height: 400px;
-  background-color: #68B0A9;
-  box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14),0 3px 14px 2px rgba(0,0,0,0.12),0 5px 5px -3px rgba(0,0,0,0.3);
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 50px;
-  padding-top: 5px;
-  border-radius: 25px;
-  margin-left: 10%;
+@media screen and (max-width:894px){
+  #login{
+    width: 60%;
+    height: 50%;
+    margin-left: 20%;
+  }
 }
+
+@media screen and (max-width:500px){
+  #login{
+    width: 80%;
+    height: 50%;
+    margin-left: 10%;
+  }
 }
 
 #usuarioId, #contrasenaId, #email{
@@ -58,10 +66,10 @@ body{
 .registrar{
   text-align: right;
   margin: 25px;
-  color: white;
+  color: black;
 }
 .registrar a{
-  color: white;
+  color: black;
 }
 /*------------Administrador------------------------------*/
 #usuarioAdmin{

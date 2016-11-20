@@ -63,7 +63,7 @@ Login de Acceso
     </div>
 
       <div id="login" class="col-xs-12 col-sm-12 col-md-12">
-        <h1 style="color: white; margin-bottom: 50px;">Login</h1>
+        <h1 style="margin-bottom: 50px;">Login</h1>
         <form action="index.php" method="POST">
           <span class="glyphicon glyphicon-user"></span>
           <label for="usuarioId">Usuario</label><br>
@@ -71,7 +71,7 @@ Login de Acceso
           <span class="glyphicon glyphicon-lock"></span>
           <label for="contrasenaId">Contraseña</label><br>
           <input type="password" class="form-control center-block" name="contraseña" id="contrasenaId" placeholder="Contraseña"></br></br>
-          <button type="submit" class="btn btn-default" name="action" style="color: black;">Acceder
+          <button type="submit" class="btn btn-default" name="action" style="background-color: #e6e6e6;">Acceder
             <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
           </button>
         </form>

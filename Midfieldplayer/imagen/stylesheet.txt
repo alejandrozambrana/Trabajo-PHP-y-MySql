@@ -1,0 +1,71 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.sprite-abajo {
+  background-position: -5px -5px;
+}
+
+.sprite-anadir {
+  background-position: -39px -5px;
+}
+
+.sprite-borrar {
+  background-position: -73px -5px;
+}
+
+.sprite-descartar {
+  background-position: -107px -5px;
+}
+
+.sprite-editar {
+  background-position: -5px -39px;
+}
+
+.sprite-enviar {
+  background-position: -39px -39px;
+}
+
+.sprite-equipos {
+  background-position: -73px -39px;
+}
+
+.sprite-home {
+  background-position: -107px -39px;
+}
+
+.sprite-left {
+  background-position: -5px -73px;
+}
+
+.sprite-menu {
+  background-position: -39px -73px;
+}
+
+.sprite-nacionalidad {
+  background-position: -73px -73px;
+}
+
+.sprite-persona {
+  background-position: -107px -73px;
+}
+
+.sprite-posicion {
+  background-position: -5px -107px;
+}
+
+.sprite-right {
+  background-position: -39px -107px;
+}
+
+.sprite-salir {
+  background-position: -73px -107px;
+}
+
+.sprite-volver {
+  background-position: -107px -107px;
+}

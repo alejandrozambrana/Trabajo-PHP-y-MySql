@@ -75,7 +75,7 @@ if(!isset($_SESSION['paginas'])) {
                 <li><a href="jugadores.php"><span class="glyphicon glyphicon-user"></span> Jugadores</a></li>
                 <li class="active"><a href="equipos.php"><span class="glyphicon glyphicon-copy"></span> Equipos</a></li>
                 <li><a href="posiciones.php"><span class="glyphicon glyphicon-transfer"></span> Posiciones</a></li>
-                <li><a href="nacionalidad.php"><span class="glyphicon glyphicon-list"></span> Nacionalidad</a></li>
+                <li><a href="nacionalidad.php"><span class="glyphicon glyphicon-list"></span> Nacionalidades</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
